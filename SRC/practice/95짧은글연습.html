@@ -59,7 +59,6 @@
             flex-direction: column;
             align-items: center;
             justify-content: space-between;
-            border: 1px solid green;
             width: 600px;
             height: 450px;
         }
@@ -67,13 +66,7 @@
         .container>.target {
             border: 1px solid;
             width: 100%;
-            height: 200px;
-        }
-
-        .container>.check {
-            border: 1px solid;
-            width: 100%;
-            height: 200px;
+            height: 400px;
         }
 
         .container>.result {
@@ -84,7 +77,7 @@
 
         .container>input[type="text"] {
             border: 1px solid;
-            background-color: aqua;
+            background-color: rgb(192, 192, 192);
             width: 100%;
             padding: 0;
             height: 25px;
@@ -115,7 +108,6 @@
             </div>
             <div class="container">
                 <div id="target-text" class="target">입력해야 할 텍스트들</div>
-                <div id="check-text" class="check">입력한 텍스트들이 올라가는 곳입니다.</div>
                 <div id="result" class="result">입력된 값이 올바른지 여부를 확인하는 부분입니다.</div>
                 <input type="text" id="input-text" placeholder="위 문장을 입력하세요">
             </div>
@@ -124,7 +116,6 @@
             </div>
         </div>
     </div>
-    </div>
 
 
     <script>
@@ -132,7 +123,7 @@
         const inputEl = document.querySelector('#input-text');
         const resultEl = document.querySelector('#result');
 
-        // 문장 배열
+        // 입력해야 할 문장들 세팅
         const texts = [
             "안녕하세요",
             "반갑습니다",
@@ -144,62 +135,64 @@
             "다시 만나요"
         ];
 
-        let textsIdx = 0; // 문장 배열 인덱스
+        // 몇 번째 문장인지 나타내기 위한 변수
+        let textsnum = 0;
 
-        // 프로그레스 표시 업데이트 함수
-        function updateProgress(validCnt, totalLength) {
-            const progressPercent = (validCnt / totalLength) * 100;
-            const progressIconEl = document.querySelector('#percentage span');
-            progressIconEl.style.left = (progressPercent === 100) ? `calc(${progressPercent}% - 25px)` : `${progressPercent}%`;
+        // 4개씩 묶어 보여주기
+        function displaytext() {
+            const showtext = texts.slice(textsnum, textsnum + 4);
+            targetTextEl.innerHTML = showtext.join('<br>');
         }
 
-        // 입력 처리 함수
-        function handleInput() {
-            const text = texts[textsIdx];
-            const inputedValue = inputEl.value.trim();
-            let validCnt = 0;
+        // 정확함을
+        function perfect() {
+            const text = texts[textsnum];
+            const inputValue = inputEl.value;  // input값을 실시간으로 가져옴
             let resultHTML = '';
 
             // 입력한 문자와 목표 문장 비교
-            for (let i = 0; i < inputedValue.length; i++) {
+            for (let i = 0; i < inputValue.length; i++) {
                 if (i >= text.length) {
-                    resultHTML += `<span class="invalid">${inputedValue[i]}</span>`;
-                } else if (text[i] !== inputedValue[i]) {
-                    resultHTML += `<span class="invalid">${inputedValue[i]}</span>`;
+                    // 총 길이를 초과했을 때 불합격
+                    resultHTML += `<span class="invalid">${inputValue[i]}</span>`;
+                } else if (text[i] !== inputValue[i]) {
+                    // 글자가 같지 않을 때 불합격
+                    resultHTML += `<span class="invalid">${inputValue[i]}</span>`;
                 } else {
-                    resultHTML += `<span class="valid">${inputedValue[i]}</span>`;
-                    validCnt++;
+                    // 맞는 글자는 합격
+                    resultHTML += `<span class="valid">${inputValue[i]}</span>`;
                 }
             }
 
             resultEl.innerHTML = resultHTML;
-            updateProgress(validCnt, text.length);
+        }
 
-            // 문장 전체 일치 여부 확인
-            if (text === inputedValue) {
-                setTimeout(() => {
-                    inputEl.disabled = true;
+        // 엔터를 눌렀을때 함수
+        function pressEnter(e) {
+            const text = texts[textsnum];
+            const inputValue = inputEl.value;
 
-                    // 다음 문장으로 이동
-                    textsIdx = (textsIdx + 1) % texts.length;
-
-                    targetTextEl.innerHTML = texts[textsIdx];
-                    inputEl.value = "";
-                    resultEl.innerHTML = "";
-
-                    inputEl.disabled = false;
-                    inputEl.focus();
-
-                    document.querySelector('#percentage span').style.left = `0`;
-                }, 1000);
+            if (e.keyCode === 13) {
+                if (inputValue === text) {
+                    //맞다면 한줄씩 위로 올린다
+                    textsnum += 1;
+                    displaytext();
+                    //입력,결과창 비우기
+                    inputEl.value = '';
+                    resultEl.innerHTML = ''; 
+                } else {
+                    //실패해도 일단 비우기
+                    inputEl.value = ''; 
+                    resultEl.innerHTML = '';
+                }
             }
         }
 
-        // 입력 이벤트 리스너
-        inputEl.addEventListener('input', handleInput);
+        inputEl.addEventListener('input', perfect);
 
-        // 초기 문장 표시
-        targetTextEl.innerHTML = texts[textsIdx];
+        inputEl.addEventListener('keydown', pressEnter);
+
+        displaytext(); 
     </script>
 </body>
 
