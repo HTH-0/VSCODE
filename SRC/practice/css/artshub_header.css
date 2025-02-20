@@ -84,6 +84,7 @@ ul {
 
 .depth2 a{
     display: none;
+    display: border;
     height: 100%;
     margin: 5px 0;
 }
