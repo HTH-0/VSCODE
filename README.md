@@ -1,6 +1,3 @@
-물론이지! 아래는 깔끔하고 보기 좋게 정돈된 **README.md**용 `VSCODE` 폴더 소개 섹션이야. 마크다운 포맷 유지하면서 들여쓰기, 간격, 링크 구조 모두 정리해뒀어:
-
-```markdown
 # 📂 VSCODE Repository
 
 <div align="center"><strong>Visual Studio Code에서 학습한 HTML / CSS / JavaScript 내용들을 정리한 저장소입니다.</strong></div>
@@ -52,7 +49,3 @@
   </details>
 
 </details>
-```
-
-🧾 **설명 줄 요약**도 추가할 수 있고, 항목마다 더 세부 설명이나 스크린샷 링크도 붙일 수 있어. 원하면 그런 식으로도 확장 가능해!  
-필요하면 `Practice` 하위도 정리해서 넣어줄게.
