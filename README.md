@@ -5,8 +5,12 @@
 
 ---
 
-## 📁 [01HTML](https://github.com/HTH-0/VSCODE/tree/main/SRC/01HTML)
-- HTML 기본 구조 및 태그 학습
+<details>
+  <summary><strong>📁 <a href="https://github.com/HTH-0/VSCODE/tree/main/SRC/01HTML">01HTML</a></strong></summary>
+
+- HTML 기본 구조 및 태그 학습  
+
+</details>
 
 <details>
   <summary><strong>📁 <a href="https://github.com/HTH-0/VSCODE/tree/main/SRC/02CSS">02CSS</a></strong></summary>
@@ -32,6 +36,9 @@
 - [06이벤트](https://github.com/HTH-0/VSCODE/tree/main/SRC/03JAVASCRIPT/06이벤트) - 이벤트 처리  
 
 </details>
+<details>
+  <summary><strong>📁 <a href="https://github.com/HTH-0/VSCODE/tree/main/SRC/Practice">Practice</a></strong></summary>
 
-## 📁 [Practice](https://github.com/HTH-0/VSCODE/tree/main/SRC/Practice)
-- 실습 및 복습 예제 정리
+- 실습 및 복습 예제 정리 
+
+</details>
