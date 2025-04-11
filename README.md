@@ -5,7 +5,7 @@
 
 ---
 
-- <strong><a href="https://github.com/HTH-0/VSCODE/tree/main/SRC/01HTML">01HTML</a></strong>  
+-  <summary><strong><a href="https://github.com/HTH-0/VSCODE/tree/main/SRC/01HTML">01HTML</a></strong> </summary>
   - HTML 기본 구조 및 태그 학습  
 
 <details>
@@ -33,6 +33,6 @@
   </ul>
 </details>
 
-- <strong><a href="https://github.com/HTH-0/VSCODE/tree/main/SRC/Practice">Practice</a></strong>  
+- <summary><strong><a href="https://github.com/HTH-0/VSCODE/tree/main/SRC/Practice">Practice</a></strong></summary>
   - 실습 및 복습 예제 정리
 
