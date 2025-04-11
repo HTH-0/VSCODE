@@ -1,13 +1,12 @@
-# 📂 VSCODE Repository
+# 📂 VSCODE
 
-<div align="center"><strong>Visual Studio Code에서 학습한 HTML / CSS / JavaScript 내용들을 정리한 저장소입니다.</strong></div>
+<div align="center"><strong>HTML / CSS / JavaScript 내용들을 정리한 저장소입니다.</strong></div>
 
 ---
 
 ## 📁 폴더 구조
 
-<details>
-  <summary><strong>📁 VSCODE</strong></summary>
+<strong>📁 VSCODE</strong>
 
   <details>
     <summary><strong>📁 <a href="https://github.com/HTH-0/VSCODE/tree/main/SRC/01HTML">01HTML</a></strong></summary>
