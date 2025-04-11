@@ -4,7 +4,6 @@
 <div align="center"><strong>HTML / CSS / JavaScript 내용들을 정리한 저장소입니다.</strong></div>
 
 ---
-## 📁 VSCODE
 
 - <strong><a href="https://github.com/HTH-0/VSCODE/tree/main/SRC/01HTML">01HTML</a></strong>  
   - HTML 기본 구조 및 태그 학습  
